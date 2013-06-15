@@ -1,5 +1,5 @@
 #!/bin/bash
 DOMAIN=$1
 SNAPSHOT=$2
-~/bashrc/vssd.sh "$DOMAIN" "$SNAPSHOT"
-~/bashrc/vssc.sh "$DOMAIN" "$SNAPSHOT"
+~/kvmrc/vssd.sh "$DOMAIN" "$SNAPSHOT"
+~/kvmrc/vssc.sh "$DOMAIN" "$SNAPSHOT"
