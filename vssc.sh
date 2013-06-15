@@ -5,4 +5,4 @@ virsh destroy "$DOMAIN" \
   ; virsh snapshot-create-as "$DOMAIN" "$SNAPSHOT" \
   && virsh start "$DOMAIN" \
   && virsh snapshot-list "$DOMAIN" \
-  && pm-suspend
+  && $HOME/bashrc/sleep.sh
