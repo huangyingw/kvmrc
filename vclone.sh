@@ -6,7 +6,9 @@ if [ ! -d "${DIR}" ];
 then   
   mkdir -p "${DIR}"
 fi
-virsh destroy "$ORIGIN" \
+virsh undefine --snapshots-metadata "$TARGET" \
+  ; virsh destroy "$ORIGIN" \
+  ; virsh destroy "$TARGET" \
   ; virt-clone --force --original "$ORIGIN" --name "$TARGET" --file "$DIR"/"$TARGET".qcow2 \
   && virsh start "$TARGET" \
   && virsh dumpxml "$TARGET" > "$DIR"/"$TARGET".xml \
