@@ -6,10 +6,12 @@ if [ ! -d "${DIR}" ];
 then   
   mkdir -p "${DIR}"
 fi
-virsh undefine --snapshots-metadata "$TARGET" \
+$HOME/kvmrc/vsuspend.sh \
+  ; virsh undefine --snapshots-metadata "$TARGET" \
   ; virsh destroy "$ORIGIN" \
   ; virsh destroy "$TARGET" \
   ; virt-clone --force --original "$ORIGIN" --name "$TARGET" --file "$DIR"/"$TARGET".qcow2 \
   && virsh start "$TARGET" \
   && virsh dumpxml "$TARGET" > "$DIR"/"$TARGET".xml \
-  && $HOME/bashrc/sleep.sh
+  ; $HOME/kvmrc/vresume.sh \
+  ; $HOME/bashrc/sleep.sh
