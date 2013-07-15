@@ -1,8 +1,10 @@
 #!/bin/bash
 DOMAIN=$1
 SNAPSHOT=$2
-virsh destroy "$DOMAIN" \
+$HOME/kvmrc/vsuspend.sh \
+  ; virsh destroy "$DOMAIN" \
   ; virsh snapshot-create-as "$DOMAIN" "$SNAPSHOT" \
   && virsh start "$DOMAIN" \
   && virsh snapshot-list "$DOMAIN" \
-  && $HOME/bashrc/sleep.sh
+  ; $HOME/kvmrc/vresume.sh \
+  ; $HOME/bashrc/sleep.sh  
