@@ -3,10 +3,10 @@ ORIGIN=$1
 TARGET=$2
 DIR=/media/vmware/kvm/"$TARGET"/
 if [ ! -d "${DIR}" ];
-then   
+then
   mkdir -p "${DIR}"
 fi
-$HOME/kvmrc/vsuspend.sh \
+$HOME/kvmrc/vdestroy.sh \
   ; virsh undefine --snapshots-metadata "$TARGET" \
   ; virsh destroy "$ORIGIN" \
   ; virsh destroy "$TARGET" \
