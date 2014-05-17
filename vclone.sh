@@ -13,5 +13,4 @@ $HOME/kvmrc/vsuspend.sh \
   ; virt-clone --force --original "$ORIGIN" --name "$TARGET" --file "$DIR"/"$TARGET".qcow2 \
   && virsh start "$TARGET" \
   && virsh dumpxml "$TARGET" > "$DIR"/"$TARGET".xml \
-  ; $HOME/kvmrc/vresume.sh \
-  ; $HOME/bashrc/sleep.sh
+  ; $HOME/kvmrc/vresume.sh
