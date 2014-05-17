@@ -1,7 +1,7 @@
 #!/bin/bash
 ORIGIN=$1
 TARGET=$2
-DIR=/media/vmware/kvm/"$TARGET"/
+DIR=/media/volgrp/kvm/"$TARGET"/
 if [ ! -d "${DIR}" ];
 then   
   mkdir -p "${DIR}"
