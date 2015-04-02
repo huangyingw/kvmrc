@@ -1,7 +1,7 @@
 #!/bin/bash
 ORIGIN=$1
 TARGET=$2
-DIR=/media/vmware/kvm/"$TARGET"/
+DIR=/media/volgrp/kvm/"$TARGET"/
 if [ ! -d "${DIR}" ];
 then
   mkdir -p "${DIR}"
@@ -13,5 +13,4 @@ $HOME/kvmrc/vdestroy.sh \
   ; virt-clone --force --original "$ORIGIN" --name "$TARGET" --file "$DIR"/"$TARGET".qcow2 \
   && virsh start "$TARGET" \
   && virsh dumpxml "$TARGET" > "$DIR"/"$TARGET".xml \
-  ; $HOME/loadrc/kvmrc/vresume.sh \
-  ; $HOME/loadrc/bashrc/sleep.sh
+  ; $HOME/loadrc/kvmrc/vresume.sh
