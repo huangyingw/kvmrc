@@ -5,4 +5,4 @@ virsh destroy "$DOMAIN" \
   ; virsh snapshot-delete "$DOMAIN" "$SNAPSHOT" \
   && virsh start "$DOMAIN" \
   && virsh snapshot-list "$DOMAIN" \
-  && $HOME/bashrc/sleep.sh
+  && $HOME/loadrc/bashrc/sleep.sh

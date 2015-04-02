@@ -6,5 +6,5 @@ $HOME/kvmrc/vsuspend.sh \
   ; virsh snapshot-create-as "$DOMAIN" "$SNAPSHOT" \
   && virsh start "$DOMAIN" \
   && virsh snapshot-list --tree "$DOMAIN" \
-  ; $HOME/kvmrc/vresume.sh \
-  ; $HOME/bashrc/sleep.sh  
+  ; $HOME/loadrc/kvmrc/vresume.sh \
+  ; $HOME/loadrc/bashrc/sleep.sh  
