@@ -6,7 +6,7 @@ if [ ! -d "${DIR}" ];
 then
   mkdir -p "${DIR}"
 fi
-$HOME/kvmrc/vdestroy.sh \
+$HOME/loadrc/kvmrc/vdestroy.sh \
   ; virsh undefine --snapshots-metadata "$TARGET" \
   ; virsh destroy "$ORIGIN" \
   ; virsh destroy "$TARGET" \
