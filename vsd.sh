@@ -1,6 +1,6 @@
 #!/bin/bash
 XMLFILE=$1
-DOMAIN=`echo "$XMLFILE" |sed 's/\.xml//g'`
+DOMAIN=$(python ~/loadrc/kvmrc/vsd.py $1)
 virsh destroy "$DOMAIN" \
   ; virsh define "$XMLFILE" \
   ; virsh start "$DOMAIN" 
